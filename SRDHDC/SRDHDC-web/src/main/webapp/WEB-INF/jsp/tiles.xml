@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="login.inicio" template="/WEB-INF/jsp/layout/layout-login.jsp">
+		<put-attribute name="resources" value="/WEB-INF/jsp/shared/resources.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/view/login/login-body.jsp" />
+	</definition>
+	
+	<definition name="perfil.principal" template="/WEB-INF/jsp/layout/layout.jsp">
+		<put-attribute name="resources" value="/WEB-INF/jsp/shared/resources.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/view/principal/principal-body.jsp" />
+	</definition>
+	
+	<!-- Gestion Docente -->
+	<definition name="gestion.docentes.registro" template="/WEB-INF/jsp/layout/layout.jsp">
+		<put-attribute name="resources" value="/WEB-INF/jsp/shared/resources.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/view/gestion-docente/registro-body.jsp" />
+	</definition>
+	<definition name="gestion.docentes.historial" template="/WEB-INF/jsp/layout/layout.jsp">
+		<put-attribute name="resources" value="/WEB-INF/jsp/shared/resources.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/view/gestion-docente/historial-body.jsp" />
+	</definition>
+	
+	<!-- Disponibilidad -->
+	<definition name="disponibilidad" template="/WEB-INF/jsp/layout/layout.jsp">
+		<put-attribute name="resources" value="/WEB-INF/jsp/shared/resources.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/view/disponibilidad/disponibilidad-body.jsp" />
+	</definition>
+	
+	<!-- Notificar -->
+	<definition name="notificar" template="/WEB-INF/jsp/layout/layout.jsp">
+		<put-attribute name="resources" value="/WEB-INF/jsp/shared/resources.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/view/notificar/notificar-body.jsp" />
+	</definition>
+	
+	<!-- Mantenimiento -->
+	<definition name="mantenimiento.cuentas.usuario" template="/WEB-INF/jsp/layout/layout.jsp">
+		<put-attribute name="resources" value="/WEB-INF/jsp/shared/resources.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/view/mantenimiento/cuentas-usuario-body.jsp" />
+	</definition>
+	<definition name="mantenimiento.periodo.academico" template="/WEB-INF/jsp/layout/layout.jsp">
+		<put-attribute name="resources" value="/WEB-INF/jsp/shared/resources.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/view/mantenimiento/periodo-academico-body.jsp" />
+	</definition>
+	
+</tiles-definitions>

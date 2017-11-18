@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18/11/2016, 03:48:54 PM
+    Author     : carol
+*/
+
+body{
+    margin: 0 auto;
+    background-image: url("../img/fondo_principal.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 720px;
+}
+.container{
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    background-color: rgba(52,73,94,0.7);    
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.container img{
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-bottom: 30px;
+}
+
+.form-input::before{
+    content: "\f007";
+    position: absolute;
+    font-family: "FontAwesome";
+    padding-left: 5px;
+    padding-top: 5px;
+    font-size: 35px;
+}
+.form-input:nth-child(2)::before{
+    content: "\f023";
+}
+.btn-enviar{
+    padding: 15px 25px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    background-color: #000000;
+    margin-bottom: 20px;
+}
+.tituloSis{
+    font-size: 24px;
+    color: #fff;
+    padding-bottom: 25px;
+}
+a{
+    color: #fff;
+    font-size: 12px;
+}
+a1{
+    font-size: 12px;
+}

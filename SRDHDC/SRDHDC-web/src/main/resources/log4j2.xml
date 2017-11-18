@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[FRON][%d{dd-MM-yyyy HH:mm:ss.SSS}][%X{sessionId}][%5p][%logger{36}:%L][%M] %m%n" />
+		</Console>
+
+		<RollingFile name="LogRaiz"
+			filename="D:/pr/srdhdc/online/pe/web/log/srdhdc-web.log"
+			filepattern="D:/pr/srdhdc/online/pe/web/log/srdhdc-web_%d{yyyyMMdd}_%d{HHmmss}.log">
+			<PatternLayout
+				pattern="[%d{dd-MM-yyyy HH:mm:ss.SSS}][%X{sessionId}][%5p][%logger{36}:%L][%M] %m%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="5 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+
+	</Appenders>
+	<Loggers>
+		<Root level="INFO">
+			<AppenderRef ref="${appender.log.raiz}" />
+		</Root>
+	</Loggers>
+</Configuration>

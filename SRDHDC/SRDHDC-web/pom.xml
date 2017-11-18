@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>pe.unmsm.srdhdc</groupId>
+		<artifactId>SRDHDC</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>SRDHDC-web</artifactId>
+	<packaging>war</packaging>
+	<name>SRDHDC-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>pe.unmsm.srdhdc</groupId>
+			<artifactId>SRDHDC-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>SRDHDC-web</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<warName>SRDHDC-web</warName>
+					<packagingIncludes>${packaging.includes.war}</packagingIncludes>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<profile.id>dev</profile.id>
+				<appender.log.raiz>Console</appender.log.raiz>
+				<packaging.includes.war>**</packaging.includes.war>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>produccion</id>
+			<properties>
+				<profile.id>produccion</profile.id>
+				<appender.log.raiz>LogRaiz</appender.log.raiz>
+				<packaging.includes.war>WEB-INF/lib/SRDHDC*.jar,**/*.xml,**/*.properties,**/*.class,**/*.jsp,**/*.js,**/*.css,**/*.map,**/fonts/*</packaging.includes.war>
+			</properties>
+		</profile>
+	</profiles>
+</project>
