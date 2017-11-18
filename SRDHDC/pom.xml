@@ -81,7 +81,7 @@
 			<version>${tiles.version}</version>
 		</dependency>
 
-		<!-- Firebase -->
+		<!-- Firebase 5.2.0-->
 		<dependency>
 			<groupId>com.google.firebase</groupId>
 			<artifactId>firebase-admin</artifactId>
