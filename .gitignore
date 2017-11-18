@@ -1,0 +1,8 @@
+**/.gitignore
+**/.project
+**/.settings/
+**/target/
+**/.classpath
+**/.tern-project
+**/.factorypath
+**/.tern-project
