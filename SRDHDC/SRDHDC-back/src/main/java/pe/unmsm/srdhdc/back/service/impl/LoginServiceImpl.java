@@ -38,7 +38,7 @@ public class LoginServiceImpl implements LoginService {
 		Usuario usuario = firebaseService.obtenerUsuarioPorCorreo(loginDTORequest.getUsuario());
 
 		if (usuario != null) {
-			if ("johnlopezvega@gmail.com".equals(usuario.getCorreo())) {
+			if ("alxff.24@gmail.com".equals(usuario.getCorreo())) {
 				Docente docente = docentesService.obtenerDocentePorDni(usuario.getDni());
 				
 				loginDTOResponse.setNombres(docente.getNombres());
