@@ -81,11 +81,18 @@
 			<version>${tiles.version}</version>
 		</dependency>
 
-		<!-- Firebase 5.2.0-->
+		<!-- Firebase -->
 		<dependency>
 			<groupId>com.google.firebase</groupId>
 			<artifactId>firebase-admin</artifactId>
 			<version>5.2.0</version>
+		</dependency>
+		
+		<!-- Mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
 		</dependency>
 	</dependencies>
 </project>

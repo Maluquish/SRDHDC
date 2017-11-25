@@ -14,7 +14,15 @@ public interface FirebaseService {
 	
 	public void guardarDocente(Docente docente);
 	
+	public void eliminarDocente(String dni);
+	
 	public void guardarUsuario(Usuario usuario);
 	
-	public List<Docente> listaDocentes(String nombres);
+	public void eliminarUsuario(String index);
+	
+	public List<Docente> listaDocentes();
+	
+	public void editarUsuario(Usuario usuario, String indice);
+	
+	public Usuario obtenerUsuarioPorDni(String dni);
 }

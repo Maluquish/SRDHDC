@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,6 +42,13 @@ public class GestionDocentesController {
 	public Object registrarDocente(@RequestBody DocenteDTORequest requestBody) {
 		docentesService.registrarDocente(requestBody);
 		return new ResponseEntity<>(requestBody, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/eliminar-docente/{dni}", method = RequestMethod.DELETE)
+	@ResponseBody
+	public Object eliminarDocente(@PathVariable("dni") String dni) {
+		docentesService.eliminarDocente(dni);
+		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
 	
 	@RequestMapping("/historial")

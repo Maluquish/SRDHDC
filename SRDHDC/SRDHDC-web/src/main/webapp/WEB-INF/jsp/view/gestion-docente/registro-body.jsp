@@ -84,13 +84,23 @@
 			
 			<div class="col-md-3">
 				<div class="form-group">
-					<button id="btnRegistrar" class="btn btn-primary" type="button">
-						<i class="icon_plus_alt"></i> Registrar
-					</button>
-					
-					<button id="btnCancelar" class="btn btn-primary" type="button">
-						<i class="icon_close_alt"></i> Cancelar
-					</button>
+					<label class="col-form-label">DNI</label>
+					<input id="txtDni" type="text" class="form-control" placeholder="Documento nacional de indentidad">
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				<div class="form-group">
+					<label class="col-form-label">&nbsp;</label>
+					<div>
+						<button id="btnRegistrar" class="btn btn-primary" type="button">
+							<i class="icon_plus_alt"></i> Registrar
+						</button>
+						
+						<button id="btnCancelar" class="btn btn-primary" type="button">
+							<i class="icon_close_alt"></i> Cancelar
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

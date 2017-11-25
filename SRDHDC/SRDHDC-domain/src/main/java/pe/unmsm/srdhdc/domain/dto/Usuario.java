@@ -11,13 +11,6 @@ public class Usuario {
 		super();
 	}
 
-	public Usuario(String username, String apellidos, String nombres) {
-		super();
-		this.username = username;
-		this.apellidos = apellidos;
-		this.nombres = nombres;
-	}
-
 	public String getUsername() {
 		return username;
 	}

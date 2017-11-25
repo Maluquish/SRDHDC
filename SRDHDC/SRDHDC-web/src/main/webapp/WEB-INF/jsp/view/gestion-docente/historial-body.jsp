@@ -10,7 +10,7 @@
 		    </div>
 		</div>
 		
-		<h1 align="center">Regisro de Historial</h1>
+		<h1 align="center">Registro de Historial</h1>
 		<br>
 		
 		<div class="row">

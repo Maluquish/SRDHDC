@@ -38,10 +38,14 @@ public class LoginServiceImpl implements LoginService {
 		Usuario usuario = firebaseService.obtenerUsuarioPorCorreo(loginDTORequest.getUsuario());
 
 		if (usuario != null) {
-			Docente docente = docentesService.obtenerDocentePorDni(usuario.getDni());
-			
-			loginDTOResponse.setNombres(docente.getNombres());
-			loginDTOResponse.setApellidos(docente.getApellidos());
+			if ("johnlopezvega@gmail.com".equals(usuario.getCorreo())) {
+				Docente docente = docentesService.obtenerDocentePorDni(usuario.getDni());
+				
+				loginDTOResponse.setNombres(docente.getNombres());
+				loginDTOResponse.setApellidos(docente.getApellidos());
+			} else {
+				throw new ExcepcionGeneral("Usted no es un usuario administrador");
+			}
 		} else {
 			throw new ExcepcionGeneral("No se encontro al usuario en la base de datos");
 		}

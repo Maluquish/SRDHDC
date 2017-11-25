@@ -9,6 +9,8 @@ public class DocenteDTORequest {
 	private String clase;
 	private String categoria;
 	private String departamento;
+	private String dni;
+	private boolean esEdicion;
 
 	public String getNombres() {
 		return nombres;
@@ -72,5 +74,21 @@ public class DocenteDTORequest {
 
 	public void setDepartamento(String departamento) {
 		this.departamento = departamento;
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public boolean isEsEdicion() {
+		return esEdicion;
+	}
+
+	public void setEsEdicion(boolean esEdicion) {
+		this.esEdicion = esEdicion;
 	}
 }

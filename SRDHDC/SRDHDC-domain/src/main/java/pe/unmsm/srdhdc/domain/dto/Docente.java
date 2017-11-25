@@ -11,6 +11,7 @@ public class Docente {
 	private Map<String, List<String>> disponibilidad;
 	private String nombres;
 	private int num_horas;
+	private String correo;
 	
 	public Docente() {
 		super();
@@ -70,5 +71,13 @@ public class Docente {
 
 	public void setDni(String dni) {
 		this.dni = dni;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 }

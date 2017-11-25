@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
@@ -26,9 +25,6 @@ public class FirebaseServiceImpl implements FirebaseService {
 	@Autowired
 	@Qualifier("main")
 	private DatabaseReference mainDatabaseReference;
-
-	@Value("${firebase.path}")
-	private String chatPath;
 
 	@Override
 	public void actualizarUsuarios() {
@@ -74,7 +70,7 @@ public class FirebaseServiceImpl implements FirebaseService {
 	}
 	
 	@Override
-	public List<Docente> listaDocentes(String nombres) {
+	public List<Docente> listaDocentes() {
 		List<Docente> listaDocentes = DocentesBD.listaDocentesLocal;
 		return listaDocentes;
 	}
@@ -84,6 +80,12 @@ public class FirebaseServiceImpl implements FirebaseService {
 		DatabaseReference docentesDR = mainDatabaseReference.child(DocentesBD.NOMBRE);
 		docentesDR.child("d_" + docente.getDni()).setValue(docente);
 	}
+	
+	@Override
+	public void eliminarDocente(String dni) {
+		DatabaseReference docentesDR = mainDatabaseReference.child(DocentesBD.NOMBRE);
+		docentesDR.child("d_" + dni).removeValue();
+	}
 
 	@Override
 	public Usuario obtenerUsuarioPorCorreo(String correo) {
@@ -91,7 +93,22 @@ public class FirebaseServiceImpl implements FirebaseService {
 		
 		if (!CollectionUtils.isEmpty(listaUsuarios) && !StringUtils.isEmpty(correo)){
 			for (Usuario usuario : listaUsuarios) {
-				if (correo.equals(usuario.getCorreo())) {
+				if (usuario != null && correo.equals(usuario.getCorreo())) {
+					return usuario;
+				}
+			}
+		}
+
+		return null;
+	}
+	
+	@Override
+	public Usuario obtenerUsuarioPorDni(String dni) {
+		List<Usuario> listaUsuarios = UsuariosBD.listaUsuariosLocal;
+		
+		if (!CollectionUtils.isEmpty(listaUsuarios) && !StringUtils.isEmpty(dni)){
+			for (Usuario usuario : listaUsuarios) {
+				if (usuario != null && dni.equals(usuario.getDni())) {
 					return usuario;
 				}
 			}
@@ -104,5 +121,17 @@ public class FirebaseServiceImpl implements FirebaseService {
 	public void guardarUsuario(Usuario usuario) {
 		DatabaseReference usuariosDR = mainDatabaseReference.child(UsuariosBD.NOMBRE + "/listaUsuarios");
 		usuariosDR.child("" + UsuariosBD.listaUsuariosLocal.size()).setValue(usuario);
+	}
+	
+	@Override
+	public void editarUsuario(Usuario usuario, String indice) {
+		DatabaseReference usuariosDR = mainDatabaseReference.child(UsuariosBD.NOMBRE + "/listaUsuarios");
+		usuariosDR.child(indice).setValue(usuario);
+	}
+	
+	@Override
+	public void eliminarUsuario(String index) {
+		DatabaseReference usuariosDR = mainDatabaseReference.child(UsuariosBD.NOMBRE + "/listaUsuarios");
+		usuariosDR.child(index).removeValue();
 	}
 }
